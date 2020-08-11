@@ -10,29 +10,34 @@ class Directory extends React.Component {
         {
           id: 1,
           title: 'Adventure',
-          imageUrl: 'https://cdn.hipwallpaper.com/m/56/3/o2iEmS.jpg'
+          linkUrl: 'adventure',
+          imageUrl: 'https://animefanatika.co.za/afwp/wp-content/uploads/2018/06/samurai-champloo-anime-hd-wallpaper-1920x1080-37186.jpg'
         },
         {
           id: 2,
           title: 'Fantasy',
-          imageUrl: 'https://cdn.hipwallpaper.com/i/83/67/ijRFLv.jpg'
+          linkUrl: '',
+          imageUrl: 'https://usercontent2.hubstatic.com/14171949.jpg'
         },
         {
           id: 3,
           title: 'comedy',
-          imageUrl: 'https://c4.wallpaperflare.com/wallpaper/452/503/703/one-punch-man-saitama-genos-wallpaper-preview.jpg'
+          'linkUrl': '',
+          imageUrl: 'https://cdn.hiptoro.com/wp-content/uploads/2020/03/One-Punch-Man-Season-3-Release-Date-Plot-Total-Episodes-Count-revealed-for-Third-Anime-Installment.jpg'
         },
         {
           id: 4,
           title: 'horror',
           size: 'large',
-          imageUrl: 'https://c4.wallpaperflare.com/wallpaper/741/342/448/boku-no-hero-academia-midoriya-izuku-wallpaper-preview.jpg'
+          'linkUrl': '',
+          imageUrl: 'https://wallpaperset.com/w/full/c/0/b/339182.jpg'
         },
         {
           id: 5,
           title: 'motivational',
           size: 'large',
-          imageUrl: 'https://c4.wallpaperflare.com/wallpaper/497/838/394/anime-haikyu-wallpaper-preview.jpg'
+          'linkUrl': '',
+          imageUrl: 'https://c4.wallpaperflare.com/wallpaper/562/947/830/ippo-boxing-fighting-spirit-hajime-no-ippo-wallpaper-preview.jpg'
         }
       ]
     }
@@ -42,9 +47,9 @@ class Directory extends React.Component {
     return(
     <div className="directory-menu"> 
     {
-      this.state.sections.map(({id, title, imageUrl, size})=>{
+      this.state.sections.map(({id, ...otherSectionProps})=>{
         return (
-          <MenuItem key={id}  title={title} imageUrl={imageUrl} size={size} />
+          <MenuItem key={id} {...otherSectionProps} />
         )
       })
     }
